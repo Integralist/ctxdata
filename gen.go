@@ -162,7 +162,7 @@ func (d *Data) GetErrorDefault(key string, defaultValue error) error {
 // GetString returns the value of key as type string.
 // If key is not set, or its value is not of type string,
 // then GetString returns the zero value for type string.
-func (d *Data) GetString(key string, defaultValue string) string {
+func (d *Data) GetString(key string) string {
 	var ret string
 
 	val, err := d.Get(key)
@@ -181,7 +181,7 @@ func (d *Data) GetString(key string, defaultValue string) string {
 // GetInt returns the value of key as type int.
 // If key is not set, or its value is not of type int,
 // then GetInt returns the zero value for type int.
-func (d *Data) GetInt(key string, defaultValue int) int {
+func (d *Data) GetInt(key string) int {
 	var ret int
 
 	val, err := d.Get(key)
@@ -200,7 +200,7 @@ func (d *Data) GetInt(key string, defaultValue int) int {
 // GetInt64 returns the value of key as type int64.
 // If key is not set, or its value is not of type int64,
 // then GetInt64 returns the zero value for type int64.
-func (d *Data) GetInt64(key string, defaultValue int64) int64 {
+func (d *Data) GetInt64(key string) int64 {
 	var ret int64
 
 	val, err := d.Get(key)
@@ -219,7 +219,7 @@ func (d *Data) GetInt64(key string, defaultValue int64) int64 {
 // GetUint64 returns the value of key as type uint64.
 // If key is not set, or its value is not of type uint64,
 // then GetUint64 returns the zero value for type uint64.
-func (d *Data) GetUint64(key string, defaultValue uint64) uint64 {
+func (d *Data) GetUint64(key string) uint64 {
 	var ret uint64
 
 	val, err := d.Get(key)
@@ -238,7 +238,7 @@ func (d *Data) GetUint64(key string, defaultValue uint64) uint64 {
 // GetFloat64 returns the value of key as type float64.
 // If key is not set, or its value is not of type float64,
 // then GetFloat64 returns the zero value for type float64.
-func (d *Data) GetFloat64(key string, defaultValue float64) float64 {
+func (d *Data) GetFloat64(key string) float64 {
 	var ret float64
 
 	val, err := d.Get(key)
@@ -257,7 +257,7 @@ func (d *Data) GetFloat64(key string, defaultValue float64) float64 {
 // GetBool returns the value of key as type bool.
 // If key is not set, or its value is not of type bool,
 // then GetBool returns the zero value for type bool.
-func (d *Data) GetBool(key string, defaultValue bool) bool {
+func (d *Data) GetBool(key string) bool {
 	var ret bool
 
 	val, err := d.Get(key)
@@ -276,7 +276,7 @@ func (d *Data) GetBool(key string, defaultValue bool) bool {
 // GetDuration returns the value of key as type time.Duration.
 // If key is not set, or its value is not of type time.Duration,
 // then GetDuration returns the zero value for type time.Duration.
-func (d *Data) GetDuration(key string, defaultValue time.Duration) time.Duration {
+func (d *Data) GetDuration(key string) time.Duration {
 	var ret time.Duration
 
 	val, err := d.Get(key)
@@ -295,7 +295,7 @@ func (d *Data) GetDuration(key string, defaultValue time.Duration) time.Duration
 // GetTime returns the value of key as type time.Time.
 // If key is not set, or its value is not of type time.Time,
 // then GetTime returns the zero value for type time.Time.
-func (d *Data) GetTime(key string, defaultValue time.Time) time.Time {
+func (d *Data) GetTime(key string) time.Time {
 	var ret time.Time
 
 	val, err := d.Get(key)
@@ -314,7 +314,7 @@ func (d *Data) GetTime(key string, defaultValue time.Time) time.Time {
 // GetError returns the value of key as type error.
 // If key is not set, or its value is not of type error,
 // then GetError returns the zero value for type error.
-func (d *Data) GetError(key string, defaultValue error) error {
+func (d *Data) GetError(key string) error {
 	var ret error
 
 	val, err := d.Get(key)

@@ -39,7 +39,7 @@ for pair in String/string Int/int Int64/int64 Uint64/uint64 Float64/float64 Bool
     echo "// Get$name returns the value of key as type $gotype."
     echo "// If key is not set, or its value is not of type $gotype,"
     echo "// then Get$name returns the zero value for type $gotype."
-    echo "func (d *Data) Get$name(key string, defaultValue $gotype) $gotype {"
+    echo "func (d *Data) Get$name(key string) $gotype {"
     echo "	var ret $gotype"
     echo ""
     echo "	val, err := d.Get(key)"
