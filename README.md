@@ -65,3 +65,13 @@ func logMiddleware(next http.Handler, dst io.Writer) http.Handler {
     })
 }
 ```
+
+## Development
+
+The `*ctxdata.Data` `Get*(` methods (with the exception of `Get`, `GetAllSlice`, `GetAllMap` and `GetAs`) are generated dynamically using the [`hack/generate-helpers.fish`](./hack/generate-helpers.fish) shell script:
+
+```bash
+fish ./hack/generate-helpers.fish > gen.go
+```
+
+> Note: you'll require the [fish shell](https://fishshell.com/).
