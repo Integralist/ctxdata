@@ -14,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/peterbourgon/ctxdata/v3"
+	"github.com/peterbourgon/ctxdata/v4"
 )
 
 func TestBasics(t *testing.T) {
