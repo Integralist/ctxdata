@@ -97,3 +97,83 @@ func TestDataNoDefaults(t *testing.T) {
 		}
 	}
 }
+
+func TestDataDefaults(t *testing.T) {
+	t.Parallel()
+
+	_, d := ctxdata.New(context.Background())
+
+	{
+		v := "bar"
+		s := d.GetStringDefault("foo", v)
+
+		if want, have := v, s; want != have {
+			t.Fatalf("len: want %s, have %s", want, have)
+		}
+	}
+	{
+		v := 1
+		i := d.GetIntDefault("foo", v)
+
+		if want, have := v, i; want != have {
+			t.Fatalf("len: want %d, have %d", want, have)
+		}
+	}
+	{
+		v := int64(1)
+		i := d.GetInt64Default("foo", v)
+
+		if want, have := v, i; want != have {
+			t.Fatalf("len: want %d, have %d", want, have)
+		}
+	}
+	{
+		v := uint64(1)
+		u := d.GetUint64Default("foo", v)
+
+		if want, have := v, u; want != have {
+			t.Fatalf("len: want %d, have %d", want, have)
+		}
+	}
+	{
+		v := 1.0
+		f := d.GetFloat64Default("foo", v)
+
+		if want, have := v, f; want != have {
+			t.Fatalf("len: want %f, have %f", want, have)
+		}
+	}
+	{
+		v := true
+		b := d.GetBoolDefault("foo", v)
+
+		if want, have := v, b; want != have {
+			t.Fatalf("len: want %v, have %v", want, have)
+		}
+	}
+	{
+		tn := time.Now()
+		v := time.Since(tn)
+		td := d.GetDurationDefault("foo", v)
+
+		if want, have := v, td; want != have {
+			t.Fatalf("len: want %v, have %v", want, have)
+		}
+	}
+	{
+		v := time.Now()
+		tn := d.GetTimeDefault("foo", v)
+
+		if want, have := v, tn; want != have {
+			t.Fatalf("len: want %v, have %v", want, have)
+		}
+	}
+	{
+		v := "whoops"
+		e := d.GetErrorDefault("foo", errors.New(v))
+
+		if want, have := v, e.Error(); want != have {
+			t.Fatalf("len: want %s, have %s", want, have)
+		}
+	}
+}
